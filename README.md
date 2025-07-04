@@ -48,7 +48,7 @@ Allow users to add/organize items, mark them completed, edit, set date and time 
 
 🧪 How to Run
 - Clone the Repository
-git clone https://github.com/your-username/glowtasks.git
+git clone [https://github.com/your-username/glowtasks.git](https://github.com/kalyanib20/SCT_WD_04/blob/main/To%20do.html)
 - Open index.html in your browser
 No dependencies—runs natively in your local environment
 - (Optional) Use VS Code’s Live Server for real-time updates during edits
