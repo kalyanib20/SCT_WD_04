@@ -5,6 +5,8 @@ This project is built using HTML, CSS, and JavaScript, and includes essential fe
 ----
 TO-DO WEB APP
 📝 Task Summary
+
+
 Develop a basic to-do app that enables a user to add, maintain tasks. 
 Allow users to add/organize items, mark them completed, edit, set date and time of tasks.
 ----
