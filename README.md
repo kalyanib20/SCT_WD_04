@@ -59,10 +59,11 @@ No dependencies—runs natively in your local environment
 
 
 🖼 Output Summary
-- Smooth neon-themed interface with glowing task input
-- Organized task cards displaying titles, deadlines, and status
-- Instant edit and completion interactions without page reload
-- Fully functional across various screen sizes and devices
+
+
+Uploading Project5.mp4…
+
+
 
 
 
