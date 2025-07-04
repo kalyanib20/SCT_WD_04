@@ -10,7 +10,7 @@ This project is built using HTML, CSS, and JavaScript, and includes essential fe
 ---
 
 
-TO-DO WEB APP
+🖋️ TO-DO WEB APP
 
 📝 Task Summary
 
