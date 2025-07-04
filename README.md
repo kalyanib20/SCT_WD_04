@@ -7,8 +7,8 @@ TaskForge is a beautifully crafted, browser-based to-do application focused on s
 This project is built using HTML, CSS, and JavaScript, and includes essential features like task creation, real-time editing, completion marking, and deadline tracking.
 ---
 TO-DO WEB APP
-📝 Task Summary
 
+📝 Task Summary
 Develop a basic to-do app that enables a user to add, maintain tasks. 
 Allow users to add/organize items, mark them completed, edit, set date and time of tasks.
 ---
