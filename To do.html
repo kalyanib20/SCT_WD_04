@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding: 50px 20px;
+      color: #fff;
+    }
+
+    .app {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      padding: 30px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    input, button {
+      border-radius: 10px;
+      border: none;
+      padding: 12px;
+      font-size: 1em;
+      outline: none;
+    }
+
+    input {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    input::placeholder {
+      color: #ddd;
+    }
+
+    button {
+      background: #ff7e5f;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #feb47b;
+      transform: scale(1.03);
+    }
+
+    #task-list {
+      margin-top: 25px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .task {
+      background: rgba(255, 255, 255, 0.15);
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+
+    .task span {
+      max-width: 70%;
+    }
+
+    .task.completed span strong {
+      text-decoration: line-through;
+      color: #aaa;
+    }
+
+    .task small {
+      display: block;
+      color: #ccc;
+      margin-top: 5px;
+      font-size: 0.9em;
+    }
+
+    .task button {
+      margin-left: 5px;
+      background: transparent;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+      color: #fff;
+      transition: transform 0.2s ease;
+    }
+
+    .task button:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>🌟Task MASTER</h1>
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="New task..." required />
+      <input type="datetime-local" id="task-datetime" required />
+      <button type="submit">Add Task</button>
+    </form>
+    <ul id="task-list"></ul>
+  </div>
+
+  <script>
+    const taskForm = document.getElementById('task-form');
+    const taskInput = document.getElementById('task-input');
+    const taskDatetime = document.getElementById('task-datetime');
+    const taskList = document.getElementById('task-list');
+
+    taskForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const taskText = taskInput.value.trim();
+      const due = taskDatetime.value;
+
+      if (taskText && due) {
+        const taskItem = document.createElement('li');
+        taskItem.className = 'task';
+
+        taskItem.innerHTML = `
+          <span><strong>${taskText}</strong><small>${new Date(due).toLocaleString()}</small></span>
+          <div>
+            <button onclick="editTask(this)">✏️</button>
+            <button onclick="toggleComplete(this)">✔️</button>
+            <button onclick="deleteTask(this)">🗑️</button>
+          </div>
+        `;
+
+        taskList.appendChild(taskItem);
+        taskInput.value = '';
+        taskDatetime.value = '';
+      }
+    });
+
+    function toggleComplete(button) {
+      const task = button.closest('.task');
+      task.classList.toggle('completed');
+    }
+
+    function deleteTask(button) {
+      const task = button.closest('.task');
+      task.remove();
+    }
+
+    function editTask(button) {
+      const task = button.closest('.task');
+      const span = task.querySelector('span');
+      const strong = span.querySelector('strong');
+      const currentText = strong.textContent;
+      const currentTime = span.querySelector('small')?.textContent || '';
+      const newTaskText = prompt('Edit your task:', currentText);
+      if (newTaskText) {
+        span.innerHTML = `<strong>${newTaskText}</strong><small>${currentTime}</small>`;
+      }
+    }
+  </script>
+</body>
+</html>
