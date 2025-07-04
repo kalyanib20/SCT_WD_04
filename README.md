@@ -18,7 +18,7 @@ Allow users to add/organize items, mark them completed, edit, set date and time 
 - 📱 Responsive Design — Optimized for both desktop and mobile
 - 💅 Neon UI Theme — Futuristic styling with glowing accents
 - 🚫 Input Validation — Prevent blank entries and maintain clean data
-
+---
 📚 What I Learned
 - Advanced DOM manipulation and event-driven design
 - Handling time-sensitive data using JavaScript Date objects
@@ -26,21 +26,20 @@ Allow users to add/organize items, mark them completed, edit, set date and time 
 - Responsive layouts with Flexbox and CSS media queries
 - Designing UI/UX components with aesthetic harmony
 - Maintaining modularity in HTML structure and JS logic
-
+---
 🧪 How to Run
 - Clone the Repository
 git clone https://github.com/your-username/glowtasks.git
 - Open index.html in your browser
 No dependencies—runs natively in your local environment
 - (Optional) Use VS Code’s Live Server for real-time updates during edits
-
+---
 🖼 Output Summary
 - Smooth neon-themed interface with glowing task input
 - Organized task cards displaying titles, deadlines, and status
 - Instant edit and completion interactions without page reload
 - Fully functional across various screen sizes and devices
 
-If you want, I can also help write a project showcase post for LinkedIn or stylize your GitHub profile with visual enhancements to match your aesthetic. Want to keep glowing? 🌈
 
 
 
